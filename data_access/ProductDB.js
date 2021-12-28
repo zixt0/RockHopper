@@ -1,9 +1,21 @@
 var fetch = require('node-fetch-commonjs');
 
-function getProductsById(id) {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(res=>res.json())
-      .then(json=>console.log(json));
-} 
+class ProductDB {
 
-console.log(getProductsById(2));
+  getProductsById(id) {
+    return fetch(`https://fakestoreapi.com/products/${id}`)
+        .then((response) => {if(response.ok){
+          return response.json();
+        } else {
+          throw new Error('Server response was not okay');
+        }
+        })
+  }
+}
+
+module.exports = ProductDB;
+/*
+prodDB = new ProductDB();
+data = prodDB.getProductsById(2);
+console.log(data.title);
+*/
