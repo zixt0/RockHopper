@@ -1,4 +1,4 @@
-var fetch = require('node-fetch');
+var fetch = require('node-fetch-commonjs');
 
 function getProductsById(id) {
     fetch(`https://fakestoreapi.com/products/${id}`)
