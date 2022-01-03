@@ -1,8 +1,89 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+.top_border{
+  float:left;
+  width: 100%;
+}
+.title{
+  float:left;
+  margin-left: 5%;
+}
+.periode{
+  float:left;
+  margin-left: 5%;
+}
+.periode_button{
+  float:left;
+  margin-left: 5%;
+}
+.choose_date{
+  float:right;
+  margin-right: 5%;
+}
+
+.table{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.export_button
+{
+margin-left: 5%;
+width: 250px;;
+}
+
+
+.border{
+border: 1px solid #ff00d4;
+height: 200px;
+margin-left: 10%;
+margin-right: 10%;
+margin-top: 20px;
+}
+.bottom_border
+{
+  float:left;
+  margin-left: 0%;
+  width: 100%;
+  background-color: #ffffff;
+}
+.brugtmoms_value
+{
+  float:right;
+  width: 50%;
+}
+.brugtmoms_text
+{
+font-size: 15;
+text-align: right;
+}
+.brugtmoms_markeret
+{
+float:right;
+width: 90px;
+height: 30px;
+background-color: rgb(129, 125, 121);
+border-radius: 70px;
+border-color: black;
+border: 1px solid;
+text-align: center;
+padding: 10px 20px;
+margin-left: 20px;
+}
+.brugtmoms_samlet
+{
+  float:right;
+  width: 90px;
+  height: 30px;
+  background-color: rgb(129, 125, 121);
+  border-radius: 70px;
+  border-color: black;
+  border: 1px solid;
+  text-align: center;
+  padding: 10px 20px;
+  }

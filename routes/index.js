@@ -7,10 +7,10 @@ var fetch = require('node-fetch-commonjs');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  var prodDb = new ProductDB();
+ // var prodDb = new ProductDB();
   //Gets title from api
-  var product = await prodDb.getProductsById();
-  res.render('index', {title: await product.title});
+  //var product = await prodDb.getProductsById();
+  res.render('index', {title:'hej'});  // await product.title});
 });
 
 module.exports = router;

@@ -1,5 +1,45 @@
-extends layout
+html 
+  head 
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    title Brugtmoms
+  body
+    .border 
+      .top_border 
+        .title 
+          |brugtmoms
+        .periode
+          |periode: dato der passe til den valgte periode
+        .periode_button
+          input(type='button', name='Gemte-Perioder', value='Gemte Perioder')
+        .choose_date
+          label Vælg Periode: 
+          label fra: 
+          input(type="date", name="fra_dato",)
+          label til:
+          input(type="date", name="til_dato",)
+          input(type='button', name='Gem-Periode', value='Gem Periode')
+      .table 
+        table(style='width:100%', border='1')
+          tr 
+            th Id
+            th Navn
+            th Indkøbspris 
+            th Salgspris 
+            th Dato for salg 
+            th Brugtmoms 
+            th Salgs land
+            th 
+          tr 
+     
+        .bottom_border
+          .export_button      
+              input(type='button', name='export-excel', value='exporter hele periode til excel',style='width:250px')
+              input(type='button', name='export-markeret-excel', value='exporter markerede varer til excel',style='width:250px')  
 
-block content
-  h1= title
-  p Welcome to #{title}
+          .Brugtmoms_value
+            .brugtmoms_text
+              | Markeret Brugtmoms 
+              |Samlet Brugtmoms  
+            .brugtmoms_label 
+              .brugtmoms_markeret 0
+              .brugtmoms_samlet  0
