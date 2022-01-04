@@ -1,5 +1,54 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+html 
+  head 
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    title Brugtmoms
+  body
+    .border 
+      .top_border 
+        .title 
+          |Brugtmoms
+        .period
+          |Periode: dato der passe til den valgte periode
+        .period_button
+          input(type='button', name='period_button', value='Gemte perioder')
+        .choose_date
+          label Vælg Periode: 
+          label Fra: 
+          input(type="date", name="from_date",)
+          label Til:
+          input(type="date", name="to_date",)
+          input(type='button', name='save_period', value='Gem Periode')
+      .table 
+        table(style='width:100%;', border='1')
+          tr 
+            th Id
+            th Navn
+            th Indkøbspris 
+            th Salgspris 
+            th Dato for salg 
+            th Brugtmoms 
+            th Salgs land
+            th 
+          tr
+            td  1
+            td  American vintage trøje 
+            td  500
+            td  1200 
+            td  01-03-2022 
+            td  50
+            td  Danmark
+            td(style='width:20px')
+              input(type='checkbox', name='table_checkbox')
+     
+      .bottom_border
+        .export_button      
+            input(type='button', name='export-excel', value='Exporter hele periode til excel',style='width:250px; height:40px; font-weight: bold;')
+            input(type='button', name='export-marked-excel', value='Exporter markerede varer til excel',style='width:250px; height:40px; margin-top:3px; font-weight: bold;')  
+        .vat_value
+          .vat_label 
+            .vat_marked_overall
+              p Markeret Brugtmoms
+              .vat_marked 0
+            .vat_all_overall 
+              p Samlet Brugtmoms
+              .vat_all  0

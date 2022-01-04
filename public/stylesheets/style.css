@@ -1,8 +1,109 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+.border{
+  border: 1px solid #000000;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+  height: 100%;
+  }
+.top_border{
+  float:left;
+  width: 100%;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.title{
+  float:left;
+  margin-left: 5%;
+  font-size: 25;
+}
+.period{
+  float:left;
+  margin-left: 5%;
+  font-size: 20;
+}
+.period_button{
+  float:left;
+  margin-left: 5%;
+}
+.choose_date{
+  float:right;
+  margin-right: 5%;
+}
+
+.table{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.bottom_border
+{
+  float:left;
+  margin-left: 5%;
+  width: 95%;
+  background-color: #ffffff;
+  height: 200px;
+  display: flex;
+  margin-top: 20px;
+}
+.export_button
+{
+width: 20px;
+}
+.vat_value
+{
+  float:right;
+  width: 93.5%;
+  height: 200px;
+}
+
+.vat_label
+{
+width:1000px;
+float:right;
+}
+.vat_marked_overall
+{
+  height:42px;
+  width:90px;
+  float:right;
+  margin-left: 50px
+}
+
+.vat_marked
+{
+float:right;
+width: 90px;
+height: 30px;
+background-color: rgb(129, 125, 121);
+border-radius: 70px;
+border-color: black;
+border: 1px solid;
+text-align: center;
+padding: 10px 20px;
+margin-left: 20px;
+}
+.vat_all_overall
+{
+  height:42px;
+  width:90px;
+  float:right;
+}
+.vat_all
+{
+  float:right;
+  width: 90px;
+  height: 30px;
+  background-color: rgb(129, 125, 121);
+  border-radius: 70px;
+  border-color: black;
+  border: 1px solid;
+  text-align: center;
+  padding: 10px 20px;
+  }
