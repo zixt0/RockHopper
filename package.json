@@ -8,6 +8,7 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "expect.js": "^0.3.1",
     "express": "~4.16.1",
     "express-async-router": "^0.1.15",
     "http-errors": "~1.6.3",
