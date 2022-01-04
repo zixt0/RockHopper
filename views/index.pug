@@ -6,20 +6,20 @@ html
     .border 
       .top_border 
         .title 
-          |brugtmoms
-        .periode
-          |periode: dato der passe til den valgte periode
+          |Brugtmoms
+        .period
+          |Periode: dato der passe til den valgte periode
         .periode_button
-          input(type='button', name='Gemte-Perioder', value='Gemte Perioder')
+          input(type='button', name='period_button', value='Gemte perioder')
         .choose_date
           label Vælg Periode: 
-          label fra: 
-          input(type="date", name="fra_dato",)
-          label til:
-          input(type="date", name="til_dato",)
-          input(type='button', name='Gem-Periode', value='Gem Periode')
+          label Fra: 
+          input(type="date", name="from_date",)
+          label Til:
+          input(type="date", name="to_date",)
+          input(type='button', name='save_period', value='Gem Periode')
       .table 
-        table(style='width:100%', border='1')
+        table(style='width:100%;', border='1')
           tr 
             th Id
             th Navn
@@ -29,17 +29,26 @@ html
             th Brugtmoms 
             th Salgs land
             th 
-          tr 
+          tr
+            td  1
+            td  American vintage trøje 
+            td  500
+            td  1200 
+            td  01-03-2022 
+            td  50
+            td  Danmark
+            td(style='width:20px')
+              input(type='checkbox', name='table_checkbox')
      
-        .bottom_border
-          .export_button      
-              input(type='button', name='export-excel', value='exporter hele periode til excel',style='width:250px')
-              input(type='button', name='export-markeret-excel', value='exporter markerede varer til excel',style='width:250px')  
-
-          .Brugtmoms_value
-            .brugtmoms_text
-              | Markeret Brugtmoms 
-              |Samlet Brugtmoms  
-            .brugtmoms_label 
-              .brugtmoms_markeret 0
-              .brugtmoms_samlet  0
+      .bottom_border
+        .export_button      
+            input(type='button', name='export-excel', value='Exporter hele periode til excel',style='width:250px; height:40px; font-weight: bold;')
+            input(type='button', name='export-marked-excel', value='Exporter markerede varer til excel',style='width:250px; height:40px; margin-top:3px; font-weight: bold;')  
+        .vat_value
+          .vat_label 
+            .vat_marked_overall
+              p Markeret Brugtmoms
+              .vat_marked 0
+            .vat_all_overall 
+              p Samlet Brugtmoms
+              .vat_all  0
