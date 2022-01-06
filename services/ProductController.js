@@ -1,4 +1,6 @@
 var ProductDB = require('../data_access/ProductDB');
+const XLSX = require('xlsx');
+
 
 class ProductController {
   constructor() {
@@ -49,7 +51,28 @@ class ProductController {
   //Create .xlsx file with product info, VAT
   //Must also show how VAT was calculated
   async exportProductsToExcel(products) {
+      try {
+        
+      
+      const worksheet = XLSX.utils.json_to_sheet(products);
+      const workbook = XLSX.utils.book_new();
 
+      XLSX.utils.book_append_sheet(workbook, worksheet, "products");
+
+      //Generate buffer
+      XLSX.write(workbook, {bookType:'xlsx', type: 'buffer'});
+
+      //Binary string
+      XLSX.write(workbook, {bookType: 'xlsx', type: 'binary'});
+
+      XLSX.writeFile(workbook, "ProductData.xlsx");
+
+      return 1;
+
+    } catch (error) {
+        
+    }
+    
   }
 }
 module.exports = ProductController;

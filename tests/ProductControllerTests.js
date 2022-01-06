@@ -2,6 +2,7 @@ var assert = require('assert');
 var expect = require('expect.js')
 var ProductController = require('../services/ProductController');
 var ProductDB = require('../data_access/ProductDB');
+const { AssertionError } = require('assert/strict');
 
 describe('Product Controller Tests', function () {
   var pc = new ProductController();
@@ -33,6 +34,16 @@ describe('Product Controller Tests', function () {
       var products = await pc.getProductsWithVat();
       var totalVat = await pc.getSumOfVat(products);
       assert.equal(await totalVat, 425.73);
+    })
+  })
+
+  describe('Export products to .xlsx file', function () {
+    it('Should create an .xlsx file with the product data', async function () {
+      var products = await pc.getProductsWithVat();
+      var excelSheet = await pc.exportProductsToExcel(products);
+      
+      assert.equal(excelSheet, 1);
+      
     })
   })
 })
