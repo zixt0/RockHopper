@@ -29,8 +29,6 @@ class ProductController {
       if (product.vat < 0) {
         product.vat = 0;
       }
-
-
     })
     return products;
   }
@@ -73,6 +71,21 @@ class ProductController {
         
     }
     
+  }
+
+  //Takes two date objects as params, returns array with products that were sold between those dates.
+  async getProductsByDate(startDate, endDate){
+    var products = await this.prodDb.getAllProducts();
+    var newProducts = [];
+
+    //Check each products date. Push product to new array if date within range.
+    await products.forEach(product => {
+      var salesDate = new Date(product.createdAt);
+      if(salesDate >= startDate && salesDate <= endDate){
+        newProducts.push(product);
+      }
+    })
+    return newProducts;
   }
 }
 module.exports = ProductController;
