@@ -11,7 +11,9 @@ router.get('/', async function(req, res, next) {
   //Gets title from api
   //var product = await prodDb.getProductsById();
   var pc = new ProductController();
-  res.render('index', {products: await pc.getProductsWithVat()});  // await product.title});
+  var products = await pc.getProductsWithVat();
+  var totalVat = await pc.getSumOfVat(products);
+  res.render('index', {products: await products, totalVat: await totalVat});
 });
 
 module.exports = router;
