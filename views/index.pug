@@ -27,18 +27,19 @@ html
             th Salgspris 
             th Dato for salg 
             th Brugtmoms 
-            th Salgs land
+            th Salgsland
             th 
-          tr
-            td  1
-            td  American vintage trøje 
-            td  500
-            td  1200 
-            td  01-03-2022 
-            td  50
-            td  Danmark
-            td(style='width:20px')
-              input(type='checkbox', name='table_checkbox')
+          each p in products
+            tr
+              td=  p.id
+              td=  p.title
+              td=  p.buyPrice
+              td=  p.salesPrice
+              td=  new Date(p.createdAt)
+              td=  p.vat
+              td=  p.country
+              td(style='width:20px')
+                input(type='checkbox', name='table_checkbox')
      
       .bottom_border
         .export_button      
@@ -51,4 +52,4 @@ html
               .vat_marked 0
             .vat_all_overall 
               p Samlet Brugtmoms
-              .vat_all  0
+              .vat_all= totalVat
