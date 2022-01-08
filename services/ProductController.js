@@ -30,11 +30,14 @@ class ProductController {
         product.vat = 0;
       }
 
-
+      //Append calculations to object as new variables
+      product["profit"] = profit;
+      product["taxableProfit"] = taxableProfit;
     })
     return products;
   }
 
+  //Return total VAT for list of products.
   async getSumOfVat(products){
     //If single product is provided outside of an array, return vat for that product
     if(!Array.isArray(products)){
