@@ -46,4 +46,25 @@ describe('Product Controller Tests', function () {
       
     })
   })
+
+  describe('Is date within range of dates', function() {
+    it('Should get 4 products from between jan 6th and jan 10th', async function() {
+      var startDate = new Date(2022, 0, 7);
+      var endDate = new Date(2022, 0, 11);
+      var products = await pc.getProductsByDate(startDate, endDate);
+      console.log(await products);
+      assert.equal(await products.length, 4);
+      /*
+      expect(await productDate >= startDate && await productDate <= endDate).to.be.ok();
+      */
+    })
+
+    it('Should get 0 products from between jan 14th and jan 21', async function() {
+      var startDate = new Date(2022, 0, 13);
+      var endDate = new Date(2022, 0, 22);
+      var products = await pc.getProductsByDate(startDate, endDate);
+      console.log(await products);
+      assert.equal(await products.length, 0);
+    })
+  })
 })
