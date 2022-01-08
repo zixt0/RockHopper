@@ -27,7 +27,7 @@ html
             th Salgspris 
             th Dato for salg 
             th Brugtmoms 
-            th Salgs land
+            th Salgsland
             th 
           each p in products
             tr
@@ -35,7 +35,7 @@ html
               td=  p.title
               td=  p.buyPrice
               td=  p.salesPrice
-              td  01-03-2022 
+              td=  new Date(p.createdAt)
               td=  p.vat
               td=  p.country
               td(style='width:20px')
