@@ -2,4 +2,4 @@
 node_modules
 
 #excel files
-tests/ProductData.xlsx
+*.xlsx
